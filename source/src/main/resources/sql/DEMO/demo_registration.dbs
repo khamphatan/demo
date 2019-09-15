@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SqlServer_2017_CHAi" id="Project_142ff50" template="Default" database="SqlServer" >
+	<schema name="dbo" catalogname="demo" schemaname="dbo" >
+		<table name="MST_LOV" >
+			<column name="MST_LOV_TYPE" type="varchar" length="50" decimal="0" jt="12" mandatory="y" >
+				<comment><![CDATA[(PK) Group]]></comment>
+			</column>
+			<column name="MST_LOV_ID" type="varchar" length="20" decimal="0" jt="12" mandatory="y" >
+				<comment><![CDATA[(PK) Code]]></comment>
+			</column>
+			<column name="MST_LOV_ORDER" type="int" length="10" decimal="0" jt="4" mandatory="y" />
+			<column name="MST_LOV_NAME_ENG" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MST_LOV_NAME_TH" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="MST_LOV_DESCRIPTION" type="nvarchar" length="100" decimal="0" jt="12" />
+			<column name="ACTIVE_STATUS" type="bit" length="1" decimal="0" jt="-7" mandatory="y" >
+				<defo>0</defo>
+			</column>
+			<column name="CREATE_DATETIME" type="datetime" length="23" decimal="3" jt="93" mandatory="y" >
+				<defo>getdate()</defo>
+			</column>
+			<column name="CREATE_USER" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="UPDATE_DATETIME" type="datetime" length="23" decimal="3" jt="93" />
+			<column name="UPDATE_USER" type="varchar" length="20" decimal="0" jt="12" />
+			<index name="PK_MST_LOV" unique="PRIMARY_KEY" >
+				<column name="MST_LOV_TYPE" />
+				<column name="MST_LOV_ID" />
+			</index>
+		</table>
+		<table name="x_roles" >
+			<column name="id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" autoincrement="y" />
+			<column name="name" type="varchar" length="50" decimal="0" jt="12" />
+			<index name="PK__x_roles__3213E83FC286B082" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="UK_9xs1dtpcsbc23gjuafdmjlpf7" unique="UNIQUE" >
+				<column name="name" />
+			</index>
+		</table>
+		<table name="x_user" >
+			<column name="id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" autoincrement="y" />
+			<column name="address" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="citizen_id" type="varchar" length="15" decimal="0" jt="12" />
+			<column name="email" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="encoded_password" type="varchar" length="255" decimal="0" jt="12" />
+			<column name="first_name" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="first_name_eng" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="gender_code" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="last_name" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="last_name_eng" type="varchar" length="100" decimal="0" jt="12" />
+			<column name="member_type" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="mobile_number" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="phone_number" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="reference_code" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="salary" type="float" length="53" decimal="0" jt="8" />
+			<column name="status" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="title_code" type="varchar" length="20" decimal="0" jt="12" />
+			<column name="username" type="varchar" length="50" decimal="0" jt="12" />
+			<index name="PK__x_user__3213E83F27879417" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="UK_21xyxcsu2cexbialpnwo0ka21" unique="UNIQUE" >
+				<column name="gender_code" />
+				<column name="member_type" />
+				<column name="status" />
+				<column name="title_code" />
+			</index>
+			<index name="UKf4urxc4e9c3jfxmw6lb0c5x7l" unique="UNIQUE" >
+				<column name="username" />
+			</index>
+			<index name="UKqa8ligjf7rvk5kb87w7yvhxsw" unique="UNIQUE" >
+				<column name="reference_code" />
+			</index>
+		</table>
+		<table name="x_user_roles" >
+			<column name="user_id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="role_id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<index name="PK__x_user_r__6EDEA153A3C161F1" unique="PRIMARY_KEY" >
+				<column name="user_id" />
+				<column name="role_id" />
+			</index>
+			<fk name="FKr7995e7n87xdhy2atwaa73yk7" to_schema="dbo" to_table="x_roles" >
+				<fk_column name="role_id" pk="id" />
+			</fk>
+			<fk name="FKqq4uy7t20r1r90sogyradx5kk" to_schema="dbo" to_table="x_user" >
+				<fk_column name="user_id" pk="id" />
+			</fk>
+		</table>
+	</schema>
+	<connector name="SqlServer_2017_CHAi" database="SqlServer" driver_class="com.microsoft.sqlserver.jdbc.SQLServerDriver" driver_jar="mssql-jdbc-6.4.0.jre8.jar" driver_desc="Native Driver - Database Authentication" host="127.0.0.1" port="1433" instance="demo" user="sa" passwd="UEBzc3cwcmQ=" />
+	<layout name="Default Layout" id="Layout_2a8292f" show_relation="columns" >
+		<entity schema="dbo" name="MST_LOV" color="3986C1" x="432" y="48" />
+		<entity schema="dbo" name="x_roles" color="BED3F4" x="48" y="192" />
+		<entity schema="dbo" name="x_user" color="BED3F4" x="192" y="48" />
+		<entity schema="dbo" name="x_user_roles" color="BED3F4" x="48" y="48" />
+	</layout>
+	<layout name="Sample Layout with Tools" id="Layout_2d5d165" show_column_type="y" show_relation="columns" >
+		<comment><![CDATA[demo_registration]]></comment>
+		<entity schema="dbo" name="MST_LOV" color="3986C1" x="544" y="144" />
+		<entity schema="dbo" name="x_roles" color="BED3F4" x="48" y="288" />
+		<entity schema="dbo" name="x_user" color="BED3F4" x="240" y="144" />
+		<entity schema="dbo" name="x_user_roles" color="BED3F4" x="64" y="144" />
+		<callout x="64" y="80" pointer="NO" >
+			<comment><![CDATA[Double-click any table, column or foreign key to edit, right-click to start one of the tools below.
+Use the Relational Data Browse for simultaneously exploring data from multiple tables.
+All tools will be saved to project file and can be reopen.]]></comment>
+		</callout>
+		<group name="x_user_roles" color="ECF0F7" >
+			<entity schema="dbo" name="x_user_roles" />
+			<entity schema="dbo" name="x_user" />
+			<entity schema="dbo" name="x_roles" />
+		</group>
+		<script name="Sample SQL Editor" id="Editor_4801f78" language="SQL" >
+			<string><![CDATA[SELECT * 
+FROM
+	dbo.x_user_roles s;]]></string>
+		</script>
+		<browser id="Browse_33f01ef" name="Sample Relational Data Browse" confirm_updates="y" >
+			<browse_table schema="dbo" entity="x_user_roles" x="20" y="20" width="400" height="300" >
+				<browse_table schema="dbo" entity="x_roles" fk="FKr7995e7n87xdhy2atwaa73yk7" x="440" y="20" width="500" height="350" record_view="y" />
+			</browse_table>
+		</browser>
+		<query id="Query_5737e74" name="Sample Query Builder" >
+			<query_table schema="dbo" name="x_user_roles" alias="xur" x="48" y="48" >
+				<column name="user_id" />
+				<column name="role_id" />
+				<query_table schema="dbo" name="x_roles" alias="xr" x="224" y="48" fk="FKr7995e7n87xdhy2atwaa73yk7" type="Inner Join" >
+					<column name="id" />
+					<column name="name" />
+				</query_table>
+			</query_table>
+		</query>
+	</layout>
+</project>
