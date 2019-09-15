@@ -1,0 +1,37 @@
+﻿MST_LOV_TYPE,MST_LOV_ID,MST_LOV_ORDER,MST_LOV_NAME_ENG,MST_LOV_NAME_TH,MST_LOV_DESCRIPTION,ACTIVE_STATUS
+APPLICATION_STATUS,-1,-1,Please select,กรุณาเลือก,สถานะการใช้งาน (Row Status),1
+APPLICATION_STATUS,ACTIVE,1,ACTIVE,เปิดใช้งาน,NULL,1
+APPLICATION_STATUS,DELETE,3,DELETE,ยกเลิกการใช้งาน,NULL,1
+APPLICATION_STATUS,INACTIVE,2,INACTIVE,ปิดใช้งาน,NULL,1
+GENDER,-1,-1,Please select,กรุณาเลือก,เพศ,1
+GENDER,F,1,Female,หญิง,NULL,1
+GENDER,M,2,Male,ชาย,NULL,1
+MARITAL_STATUS,-1,-1,Please select,กรุณาเลือก,สถานะ,1
+MARITAL_STATUS,D,3,DIVORCE,หย่า,NULL,1
+MARITAL_STATUS,M,2,MARRIED,สมรส,NULL,1
+MARITAL_STATUS,S,1,SINGLE,โสด,NULL,1
+MARITAL_STATUS,W,4,WIDOW,คู่สมรสถึงแก่กรรม,NULL,1
+MEMBER_TYPE,-1,-1,Please select,กรุณาเลือก,ประเภทของสมาชิก,1
+MEMBER_TYPE,GOLD,2,GOLD,GOLD,NULL,1
+MEMBER_TYPE,PLATINUM,3,PLATINUM,PLATINUM,NULL,1
+MEMBER_TYPE,SILVER,1,SILVER,SILVER,NULL,1
+RESPONSE_CODE,-1,-1,Please select,Please select,ประเภทของข้อผิดพลาด,1
+RESPONSE_CODE,RES_0000,1,None,None,NULL,1
+RESPONSE_CODE,RES_8000,2,Error Security,Error Security,NULL,1
+RESPONSE_CODE,RES_9000,3,Error Processing,Error Processing,NULL,1
+RESPONSE_CODE,RES_9001,4,Invalid Header Parameter,Invalid Header Parameter,NULL,1
+RESPONSE_CODE,RES_9002,5,Invalid Parameter,Invalid Parameter,NULL,1
+RESPONSE_CODE,RES_9003,6,Not Found,Not Found,NULL,1
+RESPONSE_CODE,RES_9004,7,Duplicated,Duplicated,NULL,1
+RESPONSE_CODE,RES_9005,8,Call External Services,Call External Services,NULL,1
+RESPONSE_TYPE,ERROR,3,Error,Error,NULL,1
+RESPONSE_TYPE,INFO,2,Information,Information,NULL,1
+RESPONSE_TYPE,SUCCESS,1,Successfully,Successfully,NULL,1
+RESPONSE_TYPE,WARNING,4,Warning,Warning,NULL,1
+ROLE_NAME,-1,-1,Please select,กรุณาเลือก,NULL,1
+ROLE_NAME,ROLE_ADMIN,1,Role Admin,เจ้าหน้าที่ดูแลระบบ,NULL,1
+ROLE_NAME,ROLE_USER,2,Role User,ผู้ใช้งานทั่วไป,NULL,1
+TITLE_NAME,-1,-1,Please select,กรุณาเลือก,คำนำหน้าชื่อ,1
+TITLE_NAME,MISS,2,MISS,นางสาว,NULL,1
+TITLE_NAME,MR,1,MR.,นาย,NULL,1
+TITLE_NAME,MRS,3,MRS.,นาง,NULL,1
