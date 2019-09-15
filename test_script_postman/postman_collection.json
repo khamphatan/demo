@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "d6ceb1b6-aa99-4bb9-bc50-262d87f256ba",
+		"name": "Test_Outsource",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "demo",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"pornchai\",\n\t\"password\":\"123456\",\n\t\"titleCode\":\"MR\",\n\t\"firstName\":\"พรชัย\",\n\t\"lastName\":\"คำภาตัน\",\n\t\"firstNameEng\":\"PORNCHAi\",\n\t\"lastNameEng\":\"KHAMPHATAN\",\n\t\"citizenId\":\"1254687925226\",\n\t\"address\":\"test 1234\",\n\t\"email\":\"khamphatan@gmail.com\",\n\t\"genderCode\":\"M\",\n\t\"mobileNumber\":\"0898878999\",\n\t\"phoneNumber\":\"\",\n\t\"salary\":\"1000000\",\n\t\"role\":[\"user\", \"admin\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"pornchai\",\n\t\"password\":\"123456\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userinfo",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwb3JuY2hhaSIsImlhdCI6MTU2ODUyNDcxMSwiZXhwIjoxNTY4NjExMTExfQ.hfiH5yBRFcYhSXngdq3i6VPz5ZpFsATrpokQSPMTaUXSUmceYAvQrSlqlLGgew77yDVnjKF56mRCU5m8eDQRBg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/auth/userinfo/201909158999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"auth",
+								"userinfo",
+								"201909158999"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "41bed8ff-a882-48c6-b2cf-2faebb5afeeb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "dfe36755-88d1-453d-a0e3-6f309f22dea8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
